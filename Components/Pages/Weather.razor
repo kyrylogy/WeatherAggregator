@@ -1,0 +1,72 @@
+﻿@page "/weather"
+@rendermode  InteractiveServer
+@using weather_api_blazor.Components.Models
+@using weather_api_blazor.Components.Services
+@attribute [StreamRendering]
+@inject OpenWeatherService OpenWeather
+@inject GeoSphereService GeoSphere
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+<p>This component demonstrates fetching data from two separate weather APIs.</p>
+
+<div class="mb-3">
+    <button class="btn btn-primary me-2" @onclick="GetOpenWeather">
+        Get OpenWeatherMap
+    </button>
+    <button class="btn btn-secondary" @onclick="GetGeoSphere">
+        Get GeoSphere Austria
+    </button>
+</div>
+
+@if (weatherResults == null || !weatherResults.Any())
+{
+    <p><em>No data yet. Click a button above to load weather data.</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Source</th>
+            <th>City</th>
+            <th>Temperature (°C)</th>
+            <th>Condition</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var result in weatherResults)
+        {
+            <tr>
+                <td>@result.Source</td>
+                <td>@result.City</td>
+                <td>@result.TemperatureCelsius</td>
+                <td>@result.Condition</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<WeatherResult> weatherResults = new();
+
+    private async Task GetOpenWeather()
+    {
+        // Fetch from OpenWeatherMap API
+        Console.WriteLine("🔥 GetOpenWeather clicked");
+        var result = await OpenWeather.GetWeatherAsync("Vienna");
+        weatherResults.Clear();
+        weatherResults.Add(result);
+    }
+
+    private async Task GetGeoSphere()
+    {
+        // Fetch from GeoSphere Austria API
+        Console.WriteLine("🔥 GeoSphere clicked");
+        var result = await GeoSphere.GetWeatherAsync("Vienna");
+        weatherResults.Clear();
+        weatherResults.Add(result);
+    }
+}
