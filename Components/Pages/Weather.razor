@@ -1,5 +1,5 @@
-﻿@page "/weather"
-@rendermode  InteractiveServer
+﻿@page "/"
+@rendermode InteractiveServer
 @using weather_api_blazor.Components.Models
 @using weather_api_blazor.Components.Services
 @attribute [StreamRendering]
@@ -8,54 +8,51 @@
 
 <PageTitle>Weather</PageTitle>
 
-<h1>Weather</h1>
-<p>Kyrylo lox</p>
+<div class="center-content weather-text">
+    <h1 class="mb-4">MultiWeather</h1>
 
-<div class="mb-3">
-    <button class="btn btn-primary me-2" @onclick="GetOpenWeather">
-        Get OpenWeatherMap
-    </button>
-    <button class="btn btn-secondary" @onclick="GetGeoSphere">
-        Get GeoSphere Austria
-    </button>
+    <div class="d-flex gap-3 justify-content-center mb-4">
+        <button class="btn btn-primary" @onclick="GetOpenWeather">Get OpenWeatherMap</button>
+        <button class="btn btn-secondary" @onclick="GetGeoSphere">Get GeoSphere Austria</button>
+    </div>
+
+    @if (weatherResults == null || !weatherResults.Any())
+    {
+        <p><em>No data yet. Click a button above to load weather data.</em></p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-dark table-bordered table-hover text-white" style="min-width: 600px;">
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>City</th>
+                        <th>Temperature (°C)</th>
+                        <th>Condition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var result in weatherResults)
+                    {
+                        <tr>
+                            <td>@result.Source</td>
+                            <td>@result.City</td>
+                            <td>@($"{result.TemperatureCelsius:F1}")</td> @* formats as 13.5, not 13,5 *@
+                            <td>@result.Condition</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
 </div>
-
-@if (weatherResults == null || !weatherResults.Any())
-{
-    <p><em>No data yet. Click a button above to load weather data.</em></p>
-}
-else
-{
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Source</th>
-            <th>City</th>
-            <th>Temperature (°C)</th>
-            <th>Condition</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var result in weatherResults)
-        {
-            <tr>
-                <td>@result.Source</td>
-                <td>@result.City</td>
-                <td>@result.TemperatureCelsius</td>
-                <td>@result.Condition</td>
-            </tr>
-        }
-        </tbody>
-    </table>
-}
 
 @code {
     private List<WeatherResult> weatherResults = new();
 
     private async Task GetOpenWeather()
     {
-        // Fetch from OpenWeatherMap API
-        Console.WriteLine("🔥 GetOpenWeather clicked");
         var result = await OpenWeather.GetWeatherAsync("Vienna");
         weatherResults.Clear();
         weatherResults.Add(result);
@@ -63,8 +60,6 @@ else
 
     private async Task GetGeoSphere()
     {
-        // Fetch from GeoSphere Austria API
-        Console.WriteLine("🔥 GeoSphere clicked");
         var result = await GeoSphere.GetWeatherAsync("Vienna");
         weatherResults.Clear();
         weatherResults.Add(result);

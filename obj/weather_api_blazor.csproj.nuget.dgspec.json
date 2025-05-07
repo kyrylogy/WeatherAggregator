@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meliushko\\RiderProjects\\weather_api_blazor\\weather_api_blazor\\weather_api_blazor.csproj": {}
+    "C:\\A\\.NET_project\\Weather_Aggreg\\weather_api_blazor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meliushko\\RiderProjects\\weather_api_blazor\\weather_api_blazor\\weather_api_blazor.csproj": {
+    "C:\\A\\.NET_project\\Weather_Aggreg\\weather_api_blazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meliushko\\RiderProjects\\weather_api_blazor\\weather_api_blazor\\weather_api_blazor.csproj",
+        "projectUniqueName": "C:\\A\\.NET_project\\Weather_Aggreg\\weather_api_blazor.csproj",
         "projectName": "weather_api_blazor",
-        "projectPath": "C:\\Users\\meliushko\\RiderProjects\\weather_api_blazor\\weather_api_blazor\\weather_api_blazor.csproj",
-        "packagesPath": "C:\\Users\\meliushko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meliushko\\RiderProjects\\weather_api_blazor\\weather_api_blazor\\obj\\",
+        "projectPath": "C:\\A\\.NET_project\\Weather_Aggreg\\weather_api_blazor.csproj",
+        "packagesPath": "C:\\Users\\vikak\\.nuget\\packages\\",
+        "outputPath": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\meliushko\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\vikak\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -62,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\vikak\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
