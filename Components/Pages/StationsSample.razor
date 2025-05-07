@@ -1,0 +1,31 @@
+﻿@page "/stations-random"
+@rendermode InteractiveServer
+@using weather_api_blazor.Components.Models
+@using weather_api_blazor.Components.Services
+@attribute [StreamRendering]
+@inject OpenWeatherService OpenWeather
+@inject GeoSphereService GeoSphere
+
+<h3>Random GeoSphere Station</h3>
+
+<button class="btn btn-outline-primary mb-3" @onclick="LoadRandom">
+    🎲 Pick a Random Station
+</button>
+
+@if (randomStation != null)
+{
+    <div>
+        <strong>@randomStation.Name (@randomStation.Id)</strong><br />
+        Location: @randomStation.Latitude, @randomStation.Longitude<br />
+        State: @randomStation.State
+    </div>
+}
+
+@code {
+    private StationInfo? randomStation;
+
+    private async Task LoadRandom()
+    {
+        randomStation = await GeoSphere.GetRandomStationAsync();
+    }
+}
