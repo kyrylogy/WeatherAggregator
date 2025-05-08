@@ -15,18 +15,15 @@ public class AggregatorService
         }
 
         /// <summary>
-        /// Fetches weather from all registered services in parallel for the given location key (e.g. city or station code).
+        /// Fetches weather from all registered services in parallel for the given location key  by city or station id
         /// </summary>
         public async Task<List<WeatherResult>> GetAggregatedWeatherAsync(string locationKey)
         {
-            // Kick off all requests in parallel
             var tasks = _weatherServices
                 .Select(svc => svc.GetWeatherAsync(locationKey));
 
-            // Wait for them all
+            // start calls one by one and get in-flight processes
             var results = await Task.WhenAll(tasks);
-
-            // Return as a list
             return results.ToList();
         }
     }

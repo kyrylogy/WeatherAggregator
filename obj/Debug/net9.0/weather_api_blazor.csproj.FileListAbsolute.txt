@@ -93,7 +93,6 @@ C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\weather_api_blazor.csproj.Core
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\weather_api_blazor.MvcApplicationPartsAssemblyInfo.cache
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\weather_api_blazor.sourcelink.json
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\scopedcss\bundle\weather_api_blazor.styles.css
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\scopedcss\projectbundle\weather_api_blazor.bundle.scp.css
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\be6xya6ls3-t1cqhe9u97.gz
@@ -140,8 +139,6 @@ C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\2pp0f4u6y5-u9q1upor
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\07nbhn73op-h1s4sie4z3.gz
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\gk9m3im7i2-4d85u1mtcx.gz
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\bwb1chgcab-0j3bgjxly4.gz
-C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\yswwh3slz8-rkh4eagtla.gz
-C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\sn61de6vkd-rkh4eagtla.gz
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\staticwebassets.build.json
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\staticwebassets.development.json
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -156,4 +153,6 @@ C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\refint\weather_api_blazor.dll
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\weather_api_blazor.pdb
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\weather_api_blazor.genruntimeconfig.cache
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\ref\weather_api_blazor.dll
-C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\vr0zxvbasi-nyy71sxijf.gz
+C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\vr0zxvbasi-wei4x1sj1h.gz
+C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\yswwh3slz8-o53cdubv6t.gz
+C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\sn61de6vkd-o53cdubv6t.gz

@@ -33,7 +33,6 @@
     }
 
 
-    <!-- Station Search -->
     <form class="mb-3" @onsubmit="HandleSearch">
         <div class="input-group justify-content-center">
             <input class="form-control w-50" placeholder="Enter GeoSphere station name or ID..." @bind="query" @bind:event="oninput" />
@@ -152,15 +151,11 @@
     {
         if (foundStation is null)
             return;
-
-        // Clear old data
+        
         weatherResults.Clear();
-
-        // 1. GeoSphere
         var geo = await GeoSphere.GetWeatherAsync(foundStation.Id);
         weatherResults.Add(geo);
-
-        // 2. OpenWeather using coordinates
+        // here we use lat and long from geosphere
         var owm = await OpenWeather.GetWeatherByCoordinatesAsync(foundStation.Latitude, foundStation.Longitude);
         weatherResults.Add(owm);
     }
@@ -174,7 +169,7 @@
 
         randomStation = await GeoSphere.GetRandomStationAsync();
 
-        // Auto-load weather from both sources
+        
         var geo = await GeoSphere.GetWeatherAsync(randomStation.Id);
         var owm = await OpenWeather.GetWeatherByCoordinatesAsync(randomStation.Latitude, randomStation.Longitude);
 

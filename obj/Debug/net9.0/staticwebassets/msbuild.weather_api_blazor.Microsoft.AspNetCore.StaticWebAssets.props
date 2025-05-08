@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>nyy71sxijf</Fingerprint>
-      <Integrity>v825Q2jhPqkPONC6hjOJqeL/WobO+uzjIOwmC0FH5yU=</Integrity>
+      <Fingerprint>wei4x1sj1h</Fingerprint>
+      <Integrity>yOTannnSmlTkxP+R5zIiOWasaQWvC3xEsooA2HybAR8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
@@ -828,23 +828,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\js\bootstrap.min.js.map'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\weather_api_blazor.rkh4eagtla.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\weather_api_blazor.o53cdubv6t.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>weather_api_blazor</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/weather_api_blazor</BasePath>
-      <RelativePath>weather_api_blazor.rkh4eagtla.bundle.scp.css</RelativePath>
+      <RelativePath>weather_api_blazor.o53cdubv6t.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>rkh4eagtla</Fingerprint>
-      <Integrity>+6f/dm8jD20K3ao6lCVCrQRkObyRd8HP8PR2b1ICchg=</Integrity>
+      <Fingerprint>o53cdubv6t</Fingerprint>
+      <Integrity>BJCxe4deAt6oW93mgDAjJytjYUj4Pe9pPKVFOd8W3Z4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\weather_api_blazor.rkh4eagtla.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\weather_api_blazor.o53cdubv6t.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

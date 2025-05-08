@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("weather_api_blazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fcf7644720cd4f1a6a703aaf0c7f9a4e9b32c08")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+115bf188dc43be98791aca43e673e03f6b50a330")]
 [assembly: System.Reflection.AssemblyProductAttribute("weather_api_blazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("weather_api_blazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

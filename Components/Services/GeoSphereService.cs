@@ -106,7 +106,7 @@ public class GeoSphereService : IWeatherService
     }
 
     /// <summary>
-    /// Fetches current temperature for the given station ID.
+    /// Fetches current temperature for the given station ID
     /// </summary>
     public async Task<WeatherResult> GetWeatherAsync(string stationId)
     {
@@ -126,8 +126,6 @@ public class GeoSphereService : IWeatherService
 
         using var doc = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
         var root = doc.RootElement;
-
-        // GeoSphere returns a GeoJSON FeatureCollection, not "data"
         var feature = root
             .GetProperty("features")
             .EnumerateArray()
@@ -138,21 +136,16 @@ public class GeoSphereService : IWeatherService
         var parameters = feature
             .GetProperty("properties")
             .GetProperty("parameters");
-
-// Temperature
+        
         var tempValue = parameters.GetProperty("TL").GetProperty("data").EnumerateArray().First().GetDouble();
 
-// Humidity (RH)
         var humidityValue = parameters.TryGetProperty("RF", out var rf) && rf.TryGetProperty("data", out var rfData)
             ? rfData.EnumerateArray().FirstOrDefault().GetDouble()
             : double.NaN;
 
-// Wind Speed (FFAM)
         var windSpeedValue = parameters.TryGetProperty("FFAM", out var ffam) && ffam.TryGetProperty("data", out var ffamData)
             ? ffamData.EnumerateArray().FirstOrDefault().GetDouble()
             : double.NaN;
-
-// Cloudiness - GeoSphere does not provide it directly in standard TAWES dataset
         var cloudiness = double.NaN;
 
         return new WeatherResult
