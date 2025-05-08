@@ -1,127 +1,119 @@
+/* === General Page === */
+body {
+    margin: 0;
+    background: linear-gradient(to right,  #f5f6fa, #4b6cb7);
+    color: #f5f6fa;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.5s ease;
+}
 
-a, .btn-link {
-    color: #006bb7;
+/* === Headings === */
+h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e3a5f;
+    font-weight: 800;
+    text-align: center;
+}
+
+
+/* === Buttons === */
+button.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    transition: 0.2s;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-.content {
-    padding-top: 1.1rem;
-}
-
-h1:focus {
-    outline: none;
-}
-
-.valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
-}
-
-.invalid {
-    outline: 1px solid #e50000;
-}
-
-.validation-message {
-    color: #e50000;
-}
-
-.blazor-error-boundary {
-    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
-    padding: 1rem 1rem 1rem 3.7rem;
+    background-color: #3498db;
+    border-color: #2980b9;
     color: white;
 }
 
-    .blazor-error-boundary::after {
-        content: "An error has occurred."
-    }
-
-.darker-border-checkbox.form-check-input {
-    border-color: #929292;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
-    text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-    text-align: start;
-}
-
-body {
-    background-color: #1e1e2f;
+.btn-secondary {
+    background-color: #7f8c8d;
+    border-color: #707b7c;
     color: white;
 }
 
-h3 {
-    color: #90cdf4;
+button.btn:hover {
+    opacity: 0.9;
 }
 
-.center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 60px; /* move it down from top a bit */
-    min-height: auto;  /* no need to stretch to full screen */
-}
-
-.weather-text {
-    font-size: 1.1rem;
-}
-
-.table th, .table td {
-    vertical-align: middle;
-}
-
-/* Weather content wrapper */
+/* === Container === */
 .weather-container {
-    background-color: rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 2rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    width: 90%;
-    max-width: 1200px;
-    margin-top: 40px;
-    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 95%;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
 }
 
-/* Typography tweaks */
-.weather-container h1 {
-    font-size: 5rem;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-}
-
+/* === Table === */
 .weather-container table {
-    background-color: rgba(255, 255, 255, 0.05);
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
 }
 
 .weather-container th,
 .weather-container td {
-    font-size: 0.1rem;
-    color: #fff;
+    padding: 1rem;
+    color: #f0f0f0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    word-wrap: break-word;
+}
+.weather-container tbody tr:last-child td {
+    border-bottom: none;
+}
+.weather-container {
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.weather-container .btn {
+
+.weather-container th {
+    background-color: rgba(255, 255, 255, 0.15);
     font-weight: 600;
-    padding: 10px 20px;
-    font-size: 3rem;
 }
 
-/* Base look */
-body {
-    margin: 0;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    transition: background 0.8s ease;
+/* === Responsive === */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    button.btn {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .weather-container table {
+        font-size: 0.9rem;
+    }
 }
+.no-data-message {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 

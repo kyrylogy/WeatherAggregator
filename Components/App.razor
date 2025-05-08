@@ -1,25 +1,28 @@
 ﻿@using weather_api_blazor.Components.Layout
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <base href="/"/>
-    <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]"/>
-    <link rel="stylesheet" href="@Assets["app.css"]"/>
-    <link rel="stylesheet" href="@Assets["weather_api_blazor.styles.css"]"/>
-    <ImportMap/>
-    <link rel="icon" type="image/png" href="favicon.png"/>
-    <HeadOutlet/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+
+    <!-- Bootstrap first -->
+    <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
+
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="@Assets["app.css"]" />
+    <link rel="stylesheet" href="@Assets["weather_api_blazor.styles.css"]" />
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <ImportMap />
+    <HeadOutlet />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
-<Routes/>
-<script src="_framework/blazor.web.js"></script>
-</body>
-
-</html>
+<Routes />
 
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
@@ -27,7 +30,11 @@
     </Found>
     <NotFound>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p>Page not found</p>
+            <p class="text-danger text-center mt-4">Page not found</p>
         </LayoutView>
     </NotFound>
 </Router>
+
+<script src="_framework/blazor.web.js"></script>
+</body>
+</html>

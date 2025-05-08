@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qE/ASSKNReuybRJelwvTsRG4+VomNBnRqWk8LTgl0pU=",
+  "Hash": "7euCbL82iIyiWUBfk/jrObFDIr3HdIIS4L/u9MDIxQw=",
   "Source": "weather_api_blazor",
   "BasePath": "_content/weather_api_blazor",
   "Mode": "Default",
@@ -920,12 +920,12 @@
       "OriginalItemSpec": "C:\\A\\.NET_project\\Weather_Aggreg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-zdnh2bc5qq.gz",
+      "Identity": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-x9a7nrefuq.gz",
       "SourceId": "weather_api_blazor",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/weather_api_blazor",
-      "RelativePath": "app#[.{fingerprint=zdnh2bc5qq}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=x9a7nrefuq}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -934,8 +934,8 @@
       "RelatedAsset": "C:\\A\\.NET_project\\Weather_Aggreg\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "spj92fgfp5",
-      "Integrity": "8JXyF180l8HBmIdFjh1WsdomZ/l8MxsjGIstrw5IvEM=",
+      "Fingerprint": "3sf62nm268",
+      "Integrity": "Y3OKMmPIQgoAZtPU0E2VeVMMsY9/mgsrft4PjwCfQcg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\A\\.NET_project\\Weather_Aggreg\\wwwroot\\app.css"
@@ -1060,8 +1060,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zdnh2bc5qq",
-      "Integrity": "WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4=",
+      "Fingerprint": "x9a7nrefuq",
+      "Integrity": "O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -2015,12 +2015,12 @@
   "Endpoints": [
     {
       "Route": "app.css",
-      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-zdnh2bc5qq.gz",
+      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-x9a7nrefuq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000497265042"
+          "Quality": "0.001156069364"
         }
       ],
       "ResponseHeaders": [
@@ -2030,15 +2030,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2010"
+          "Value": "864"
         },
         {
           "Name": "ETag",
-          "Value": "\"8JXyF180l8HBmIdFjh1WsdomZ/l8MxsjGIstrw5IvEM=\""
+          "Value": "\"Y3OKMmPIQgoAZtPU0E2VeVMMsY9/mgsrft4PjwCfQcg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 15:12:12 GMT"
+          "Value": "Thu, 08 May 2025 07:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2058,13 +2058,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4=\""
+          "Value": "W/\"O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4="
+          "Value": "sha256-O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54="
         }
       ]
     },
@@ -2079,7 +2079,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4117"
+          "Value": "2417"
         },
         {
           "Name": "Content-Type",
@@ -2087,11 +2087,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4=\""
+          "Value": "\"O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 15:12:12 GMT"
+          "Value": "Thu, 08 May 2025 07:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2101,13 +2101,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4="
+          "Value": "sha256-O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54="
         }
       ]
     },
     {
       "Route": "app.css.gz",
-      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-zdnh2bc5qq.gz",
+      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-x9a7nrefuq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2116,7 +2116,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2010"
+          "Value": "864"
         },
         {
           "Name": "Content-Type",
@@ -2124,11 +2124,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8JXyF180l8HBmIdFjh1WsdomZ/l8MxsjGIstrw5IvEM=\""
+          "Value": "\"Y3OKMmPIQgoAZtPU0E2VeVMMsY9/mgsrft4PjwCfQcg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 15:12:12 GMT"
+          "Value": "Thu, 08 May 2025 07:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2146,18 +2146,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8JXyF180l8HBmIdFjh1WsdomZ/l8MxsjGIstrw5IvEM="
+          "Value": "sha256-Y3OKMmPIQgoAZtPU0E2VeVMMsY9/mgsrft4PjwCfQcg="
         }
       ]
     },
     {
-      "Route": "app.zdnh2bc5qq.css",
-      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-zdnh2bc5qq.gz",
+      "Route": "app.x9a7nrefuq.css",
+      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-x9a7nrefuq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000497265042"
+          "Quality": "0.001156069364"
         }
       ],
       "ResponseHeaders": [
@@ -2167,15 +2167,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2010"
+          "Value": "864"
         },
         {
           "Name": "ETag",
-          "Value": "\"8JXyF180l8HBmIdFjh1WsdomZ/l8MxsjGIstrw5IvEM=\""
+          "Value": "\"Y3OKMmPIQgoAZtPU0E2VeVMMsY9/mgsrft4PjwCfQcg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 15:12:12 GMT"
+          "Value": "Thu, 08 May 2025 07:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2195,13 +2195,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4=\""
+          "Value": "W/\"O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zdnh2bc5qq"
+          "Value": "x9a7nrefuq"
         },
         {
           "Name": "label",
@@ -2209,12 +2209,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4="
+          "Value": "sha256-O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54="
         }
       ]
     },
     {
-      "Route": "app.zdnh2bc5qq.css",
+      "Route": "app.x9a7nrefuq.css",
       "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2224,7 +2224,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4117"
+          "Value": "2417"
         },
         {
           "Name": "Content-Type",
@@ -2232,11 +2232,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4=\""
+          "Value": "\"O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 15:12:12 GMT"
+          "Value": "Thu, 08 May 2025 07:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2246,7 +2246,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zdnh2bc5qq"
+          "Value": "x9a7nrefuq"
         },
         {
           "Name": "label",
@@ -2254,13 +2254,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WSENcdjMuvW+zrUZ5zLN3cubsD5mU9ZwVYxtjo1JnZ4="
+          "Value": "sha256-O22fMVnfmCuK5xXcoRiyfWUtwniCaj3qJyNhpUCHO54="
         }
       ]
     },
     {
-      "Route": "app.zdnh2bc5qq.css.gz",
-      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-zdnh2bc5qq.gz",
+      "Route": "app.x9a7nrefuq.css.gz",
+      "AssetFile": "C:\\A\\.NET_project\\Weather_Aggreg\\obj\\Debug\\net9.0\\compressed\\vr0zxvbasi-x9a7nrefuq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2269,7 +2269,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2010"
+          "Value": "864"
         },
         {
           "Name": "Content-Type",
@@ -2277,11 +2277,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8JXyF180l8HBmIdFjh1WsdomZ/l8MxsjGIstrw5IvEM=\""
+          "Value": "\"Y3OKMmPIQgoAZtPU0E2VeVMMsY9/mgsrft4PjwCfQcg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 15:12:12 GMT"
+          "Value": "Thu, 08 May 2025 07:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2299,7 +2299,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zdnh2bc5qq"
+          "Value": "x9a7nrefuq"
         },
         {
           "Name": "label",
@@ -2307,7 +2307,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-8JXyF180l8HBmIdFjh1WsdomZ/l8MxsjGIstrw5IvEM="
+          "Value": "sha256-Y3OKMmPIQgoAZtPU0E2VeVMMsY9/mgsrft4PjwCfQcg="
         }
       ]
     },
