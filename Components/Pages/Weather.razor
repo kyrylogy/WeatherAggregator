@@ -37,7 +37,7 @@
     <form class="mb-3" @onsubmit="HandleSearch">
         <div class="input-group justify-content-center">
             <input class="form-control w-50" placeholder="Enter GeoSphere station name or ID..." @bind="query" @bind:event="oninput" />
-            <button class="btn btn-primary" type="submit">Search Station</button>
+            <button class="btn btn-primary" type="submit">Search station</button>
         </div>
     </form>
 
@@ -51,7 +51,7 @@
                 @($"State: {foundStation.State}")
             </div>
 
-            <button class="btn btn-outline-secondary mb-3" @onclick="LoadWeather">Get Station Weather</button>
+            <button class="btn btn-outline-secondary mb-3" @onclick="LoadWeather">Get station weather</button>
         }
         else
         {
