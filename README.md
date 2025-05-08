@@ -6,9 +6,11 @@ Our project compares data across Austrian weather stations with other providers 
 ## Team
 
 Kyrylo Meliushko - K12148159
+
 Viktoriia Kotliarevska - K12235891
 
 ## Presentation
 
 Slide deck here
 
+[WeatherAggregator.pdf](https://github.com/user-attachments/files/20109485/WeatherAggregator.pdf)
