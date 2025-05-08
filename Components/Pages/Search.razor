@@ -1,0 +1,84 @@
+﻿@page "/search"
+@rendermode InteractiveServer
+@using weather_api_blazor.Components.Models
+@using weather_api_blazor.Components.Services
+@inject GeoSphereService GeoSphere
+
+<PageTitle>Station Lookup</PageTitle>
+
+<h3>Find a GeoSphere Station</h3>
+
+<form class="mb-3" @onsubmit="HandleSearch">
+  <div class="input-group">
+    <input
+      class="form-control"
+      placeholder="Enter full station name or ID..."
+      @bind="query"
+      @bind:event="oninput" />
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+
+@if (searchPerformed)
+{
+    @if (foundStation != null)
+    {
+        <div class="alert alert-success">
+            <strong>@foundStation.Name</strong> (ID: @foundStation.Id)<br />
+            @($"Location: {foundStation.Latitude:F4}, {foundStation.Longitude:F4}")<br />
+            @($"State: {foundStation.State}")
+        </div>
+
+        <button class="btn btn-outline-secondary" @onclick="LoadWeather">
+          Get Current Temp
+        </button>
+
+        @if (stationWeather != null)
+        {
+            <div class="mt-3">
+                <h5>Weather at @foundStation.Name</h5>
+                <p>
+                  Temperature: <strong>@($"{stationWeather.TemperatureCelsius:F1} °C")</strong><br />
+                  Condition: <strong>@stationWeather.Condition</strong>
+                </p>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Not found.
+        </div>
+    }
+}
+
+@code {
+    private string query = "";
+    private bool searchPerformed;
+    private StationInfo? foundStation;
+    private WeatherResult? stationWeather;
+
+    private async Task HandleSearch()
+    {
+        searchPerformed = false;
+        stationWeather = null;
+        foundStation = null;
+
+        if (string.IsNullOrWhiteSpace(query))
+        {
+            searchPerformed = true;
+            return;
+        }
+
+        // Use the new FindStationAsync to resolve by name or ID:
+        foundStation = await GeoSphere.FindStationAsync(query.Trim());
+
+        searchPerformed = true;
+    }
+
+    private async Task LoadWeather()
+    {
+        if (foundStation is null) return;
+        stationWeather = await GeoSphere.GetWeatherAsync(foundStation.Id);
+    }
+}
