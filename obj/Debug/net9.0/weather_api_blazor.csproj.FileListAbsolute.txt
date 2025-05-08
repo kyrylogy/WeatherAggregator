@@ -156,4 +156,4 @@ C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\refint\weather_api_blazor.dll
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\weather_api_blazor.pdb
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\weather_api_blazor.genruntimeconfig.cache
 C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\ref\weather_api_blazor.dll
-C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\vr0zxvbasi-u4vzi4qdwd.gz
+C:\A\.NET_project\Weather_Aggreg\obj\Debug\net9.0\compressed\vr0zxvbasi-nyy71sxijf.gz

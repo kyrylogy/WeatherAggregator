@@ -11,10 +11,49 @@
 <div class="center-content weather-text">
     <h1 class="mb-4">MultiWeather</h1>
 
-    <div class="d-flex gap-3 justify-content-center mb-4">
-        <button class="btn btn-primary" @onclick="GetOpenWeather">Get OpenWeatherMap</button>
-        <button class="btn btn-secondary" @onclick="GetGeoSphere">Get GeoSphere Austria</button>
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-primary" @onclick="LoadRandomStation">
+             Pick a random GeoSphere station
+        </button>
     </div>
+
+
+
+    @if (randomStation != null)
+    {
+        <div class="alert alert-info text-center mb-3">
+            <strong>@randomStation.Name</strong> (ID: @randomStation.Id)<br />
+            @($"Location: {randomStation.Latitude:F4}, {randomStation.Longitude:F4}")<br />
+            @($"State: {randomStation.State}")
+        </div>
+    }
+
+
+    <!-- Station Search -->
+    <form class="mb-3" @onsubmit="HandleSearch">
+        <div class="input-group justify-content-center">
+            <input class="form-control w-50" placeholder="Enter GeoSphere station name or ID..." @bind="query" @bind:event="oninput" />
+            <button class="btn btn-primary" type="submit">Search Station</button>
+        </div>
+    </form>
+
+    @if (searchPerformed)
+    {
+        @if (foundStation != null)
+        {
+            <div class="alert alert-success text-center">
+                <strong>@foundStation.Name</strong> (ID: @foundStation.Id)<br />
+                @($"Location: {foundStation.Latitude:F4}, {foundStation.Longitude:F4}")<br />
+                @($"State: {foundStation.State}")
+            </div>
+
+            <button class="btn btn-outline-secondary mb-3" @onclick="LoadWeather">Get Station Weather</button>
+        }
+        else
+        {
+            <div class="alert alert-warning text-center">Station not found.</div>
+        }
+    }
 
     @if (weatherResults == null || !weatherResults.Any())
     {
@@ -23,15 +62,15 @@
     else
     {
         <div class="table-responsive">
-            <table class="table table-dark table-bordered table-hover text-white weather-table">
-
-            <thead>
+            <table class="table custom-weather-table" style="min-width: 600px;">
+                <thead>
                     <tr>
                         <th>Source</th>
-                        <th>City</th>
+                        <th>Location</th>
                         <th>Temperature (°C)</th>
-                        <th>Condition</th>
-                        <th> </th>
+                        <th>Humidity (%)</th>
+                        <th>Cloudiness (%)</th>
+                        <th>Wind Speed (m/s)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,8 +79,28 @@
                         <tr>
                             <td>@result.Source</td>
                             <td>@result.City</td>
-                            <td>@($"{result.TemperatureCelsius:F1}")</td> @* formats as 13.5, not 13,5 *@
-                            <td>@result.Condition</td>
+                            <td>@($"{result.TemperatureCelsius:F1}")</td>
+                            <td>@($"{result.Humidity:F0}")</td>
+                            <td>@($"{result.Cloudiness:F0}")</td>
+                            <td>@($"{result.WindSpeed:F1}")</td>
+                        </tr>
+                    }
+                    @if (weatherResults.Count == 2)
+                    {
+                        var diff = new WeatherResult
+                        {
+                            TemperatureCelsius = Math.Abs(weatherResults[0].TemperatureCelsius - weatherResults[1].TemperatureCelsius),
+                            Humidity = Math.Abs(weatherResults[0].Humidity - weatherResults[1].Humidity),
+                            Cloudiness = Math.Abs(weatherResults[0].Cloudiness - weatherResults[1].Cloudiness),
+                            WindSpeed = Math.Abs(weatherResults[0].WindSpeed - weatherResults[1].WindSpeed),
+                        };
+                        <tr class="table-warning fw-bold">
+                            <td>Δ Difference</td>
+                            <td>-</td>
+                            <td>@($"{diff.TemperatureCelsius:F1}")</td>
+                            <td>@($"{diff.Humidity:F0}")</td>
+                            <td>@($"{diff.Cloudiness:F0}")</td>
+                            <td>@($"{diff.WindSpeed:F1}")</td>
                         </tr>
                     }
                 </tbody>
@@ -52,6 +111,10 @@
 
 @code {
     private List<WeatherResult> weatherResults = new();
+
+    private string query = "";
+    private bool searchPerformed;
+    private StationInfo? foundStation;
 
     private async Task GetOpenWeather()
     {
@@ -66,4 +129,54 @@
         weatherResults.Clear();
         weatherResults.Add(result);
     }
+
+    private async Task HandleSearch()
+    {
+        searchPerformed = false;
+        foundStation = null;
+        weatherResults.Clear();
+
+        if (!string.IsNullOrWhiteSpace(query))
+        {
+            foundStation = await GeoSphere.FindStationAsync(query.Trim());
+        }
+
+        searchPerformed = true;
+    }
+
+    private async Task LoadWeather()
+    {
+        if (foundStation is null)
+            return;
+
+        // Clear old data
+        weatherResults.Clear();
+
+        // 1. GeoSphere
+        var geo = await GeoSphere.GetWeatherAsync(foundStation.Id);
+        weatherResults.Add(geo);
+
+        // 2. OpenWeather using coordinates
+        var owm = await OpenWeather.GetWeatherByCoordinatesAsync(foundStation.Latitude, foundStation.Longitude);
+        weatherResults.Add(owm);
+    }
+    private StationInfo? randomStation;
+
+    private async Task LoadRandomStation()
+    {
+        weatherResults.Clear();
+        searchPerformed = false;
+        foundStation = null;
+
+        randomStation = await GeoSphere.GetRandomStationAsync();
+
+        // Auto-load weather from both sources
+        var geo = await GeoSphere.GetWeatherAsync(randomStation.Id);
+        var owm = await OpenWeather.GetWeatherByCoordinatesAsync(randomStation.Latitude, randomStation.Longitude);
+
+        weatherResults.Add(geo);
+        weatherResults.Add(owm);
+    }
+
+
 }

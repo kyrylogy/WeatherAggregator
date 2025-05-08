@@ -135,22 +135,34 @@ public class GeoSphereService : IWeatherService
         if (feature.ValueKind == JsonValueKind.Undefined)
             throw new InvalidOperationException($"No data returned for station '{stationId}'");
 
-        // dive into properties → parameters → TL → data[0]
-        var tempValue = feature
+        var parameters = feature
             .GetProperty("properties")
-            .GetProperty("parameters")
-            .GetProperty("TL")
-            .GetProperty("data")
-            .EnumerateArray()
-            .First()
-            .GetDouble();
+            .GetProperty("parameters");
+
+// Temperature
+        var tempValue = parameters.GetProperty("TL").GetProperty("data").EnumerateArray().First().GetDouble();
+
+// Humidity (RH)
+        var humidityValue = parameters.TryGetProperty("RF", out var rf) && rf.TryGetProperty("data", out var rfData)
+            ? rfData.EnumerateArray().FirstOrDefault().GetDouble()
+            : double.NaN;
+
+// Wind Speed (FFAM)
+        var windSpeedValue = parameters.TryGetProperty("FFAM", out var ffam) && ffam.TryGetProperty("data", out var ffamData)
+            ? ffamData.EnumerateArray().FirstOrDefault().GetDouble()
+            : double.NaN;
+
+// Cloudiness - GeoSphere does not provide it directly in standard TAWES dataset
+        var cloudiness = double.NaN;
 
         return new WeatherResult
         {
             Source             = "GeoSphere Austria",
             City               = stationId,
             TemperatureCelsius = (float)tempValue,
-            Condition          = "N/A"
+            Humidity           = (float)(double.IsNaN(humidityValue) ? 0 : humidityValue),
+            WindSpeed          = (float)(double.IsNaN(windSpeedValue) ? 0 : windSpeedValue),
+            Cloudiness         = (float)(double.IsNaN(cloudiness) ? 0 : cloudiness)
         };
     }
 
