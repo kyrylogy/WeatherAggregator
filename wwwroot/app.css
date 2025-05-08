@@ -1,7 +1,7 @@
 /* === General Page === */
 body {
     margin: 0;
-    background: linear-gradient(to right,  #f5f6fa, #4b6cb7);
+    background: linear-gradient(to left,  #f5f6fa, #4b6cb7);
     color: #f5f6fa;
     font-family: 'Segoe UI', sans-serif;
     transition: background 0.5s ease;
