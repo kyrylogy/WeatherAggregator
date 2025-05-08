@@ -57,10 +57,12 @@ public class OpenWeatherService : IWeatherService
         var weather = data.GetProperty("weather")[0];
         var wind = data.GetProperty("wind");
         var clouds = data.GetProperty("clouds");
+        
 
         return new WeatherResult
         {
             Source = "OpenWeatherMap",
+            
             City = city,
             TemperatureCelsius = (float)main.GetProperty("temp").GetDouble(),
             Humidity = (float)main.GetProperty("humidity").GetDouble(),
